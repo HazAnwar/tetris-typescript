@@ -1,0 +1,39 @@
+{
+  "name": "hazik-tetris-game-engine",
+  "version": "1.0.0",
+  "description": "Tetris game with manual input",
+  "author": "Hazik Anwar",
+  "license": "N/A",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.16.0",
+    "@types/node": "22.10.2",
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2",
+    "css-loader": "7.1.2",
+    "eslint": "9.16.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "eslint-plugin-react": "7.37.2",
+    "globals": "15.13.0",
+    "html-webpack-plugin": "5.6.3",
+    "prettier": "3.4.2",
+    "style-loader": "4.0.0",
+    "ts-loader": "9.5.1",
+    "typescript": "5.7.2",
+    "typescript-eslint": "8.18.0",
+    "webpack": "5.97.1",
+    "webpack-cli": "5.1.4",
+    "webpack-dev-server": "5.2.0"
+  }
+}

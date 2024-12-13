@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import styled from '@emotion/styled';
+
 import { Grid } from '../types/grid';
 
 interface TetrisGridProps {
@@ -46,24 +47,30 @@ const TableFooter = styled.tfoot`
 export const TetrisGrid = ({ grid }: TetrisGridProps) => {
   const height = grid.length;
   const width = grid[0].length;
-
   const initialHeight = Math.round(window.innerHeight * 0.035);
-
   const rowNumbers: ReactElement[] = [];
+  const tableRows: ReactElement[] = [];
+
   for (let rowNumber = 0; rowNumber < width; rowNumber++) {
     rowNumbers.push(<td key={rowNumber}>{rowNumber}</td>);
   }
 
-  const tableRows: ReactElement[] = [];
   for (let i = 0; i < height; i++) {
     if (i < height - initialHeight && grid[i].every((cell) => cell === '')) {
       continue;
     }
 
     const row: ReactElement[] = [];
+
     for (let j = 0; j < width; j++) {
       const gridItem = grid[i][j];
-      row.push(<TD className={gridItem ? `filled-${gridItem}` : undefined} key={j} />);
+      row.push(
+        <TD
+          data-testid={`${i}-${j}`}
+          className={gridItem ? `filled-${gridItem}` : undefined}
+          key={j}
+        />,
+      );
     }
 
     tableRows.push(<tr key={i}>{row}</tr>);

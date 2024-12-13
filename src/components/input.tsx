@@ -91,14 +91,12 @@ export const InputForm = ({ onSubmit }: InputFormProps) => {
   return (
     <>
       <Text className={error ? 'error' : undefined}>{text}</Text>
-
       <Form action={handleSubmit}>
         <CenteredDiv>
-          <Input type='text' name='input' autoComplete='off' />
+          <Input type='text' name='input' autoComplete='off' placeholder='Enter shape' />
           <Button type='submit'>Submit</Button>
         </CenteredDiv>
       </Form>
-
       <CenteredDiv>
         <Text>Or select a file</Text>
         <Input name='file' type='file' onChange={handleFileUpload} />

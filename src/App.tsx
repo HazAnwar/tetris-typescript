@@ -1,10 +1,10 @@
 import { useState } from 'react';
+import styled from '@emotion/styled';
+
 import { TetrisGrid } from './components/grid';
 import { InputForm } from './components/input';
 import { TetrisEngine } from './engine';
 import { Grid } from './types/grid';
-
-import styled from '@emotion/styled';
 
 const GRID_WIDTH = 10;
 const GRID_HEIGHT = 100;
@@ -31,10 +31,14 @@ export const App = () => {
     setGrid(tetrisEngine.processNewLine(lineInput));
   };
 
+  const resetGrid = () => {
+    setGrid(tetrisEngine.resetGrid());
+  };
+
   return (
     <>
       <AppHeader>Hazik&apos;s Tetris Engine</AppHeader>
-      <ResetButton onClick={() => setGrid(tetrisEngine.resetGrid())}>Reset</ResetButton>
+      <ResetButton onClick={resetGrid}>Reset</ResetButton>
       <TetrisGrid grid={grid} />
       <InputForm onSubmit={onSubmit} />
     </>

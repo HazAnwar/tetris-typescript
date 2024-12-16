@@ -15,3 +15,7 @@ In order to run the app in development mode, you can simply run `yarn dev` which
 ## Production Mode
 
 You can run `yarn build` which will compile the code into a production ready setup. It will output all the relevant files into the `dist` folder which will then need to be served/hosted to test in a real world environment
+
+## Run Unit Tests
+
+You can run the unit tests very easily and simply by running the `yarn test` command
